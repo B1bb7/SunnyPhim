@@ -1,251 +1,169 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Blog Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tên Website Phim</title>
     <style>
-        :root {
-            --primary-dark: #1d1b26;
-            --primary-light: #ffffff;
-            --rating-color: #ff9806;
-            --status-color: #de3b3b;
-        }
-
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background: var(--primary-dark);
-            color: var(--primary-light);
+            background-color: #1d1b26;
+            color: white;
         }
-
-        /* Header Styles */
-        .header {
-            padding: 1rem;
-            background: var(--primary-dark);
-        }
-
-        .logo img {
-            max-height: 60px;
-        }
-
-        /* Navigation Styles */
-        .main-nav {
-            background: #2a2833;
-            padding: 1rem;
-        }
-
-        .nav-list {
+        header {
+            background-color: #2c2b36;
+            padding: 10px 20px;
             display: flex;
-            gap: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 50px;
+        }
+        nav ul {
+            display: flex;
             list-style: none;
-            margin: 0;
             padding: 0;
+            margin: 0;
+            gap: 20px;
         }
-
-        .search-bar {
-            padding: 0.5rem;
-            border-radius: 20px;
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .search-bar input {
+            padding: 5px;
             border: none;
-            width: 200px;
+            border-radius: 5px;
         }
-
-        .theme-toggle {
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 50%;
-            background: #444;
-        }
-
-        /* Slider Styles */
         .slider {
+            background-color: #3b3b3b;
+            height: 300px;
             position: relative;
-            height: 400px;
-            overflow: hidden;
+            text-align: center;
+            line-height: 300px;
         }
-
-        .slide {
-            position: relative;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .slide-info {
+        .slider button {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem;
-            background: rgba(29, 27, 38, 0.8);
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
         }
-
-        /* Movie Card Styles */
-        .movie-card {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .movie-card img {
-            width: 100%;
-            aspect-ratio: 2/3;
-            object-fit: cover;
-        }
-
-        .movie-format,
-        .movie-rating,
-        .movie-status {
-            position: absolute;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            background: rgba(29, 27, 38, 0.8);
-        }
-
-        .movie-format {
-            top: 10px;
+        .slider button.left {
             left: 10px;
         }
-
-        .movie-rating {
-            top: 10px;
+        .slider button.right {
             right: 10px;
-            color: var(--rating-color);
         }
-
-        .movie-status {
-            bottom: 10px;
-            right: 10px;
-            background: var(--status-color);
+        .container {
+            padding: 20px;
         }
-
-        /* Grid Layout */
-        .movie-grid {
+        .movie-section {
+            margin-bottom: 30px;
+        }
+        .movie-section h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .movie-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            padding: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
         }
-
-        /* Footer Styles */
-        .footer {
-            background: var(--primary-dark);
-            padding: 2rem;
+        .movie-card {
+            background-color: #2c2b36;
+            padding: 10px;
+            border-radius: 8px;
             text-align: center;
         }
-
-        /* Link Styles */
-        a {
-            color: var(--primary-light);
-            text-decoration: none;
+        .movie-card img {
+            max-width: 100%;
+            border-radius: 8px;
         }
-
-        a:hover {
-            color: var(--rating-color);
+        footer {
+            background-color: #2c2b36;
+            padding: 10px 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">
-            <img src="/api/placeholder/200/60" alt="Logo" />
-        </div>
-    </header>
 
-    <!-- Main Navigation -->
-    <nav class="main-nav">
-        <ul class="nav-list">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Phim Bộ</a></li>
+<!-- Header -->
+<header>
+    <img src="URL_LOGO" alt="Logo">
+    <nav>
+        <ul>
+            <li><a href="#">Trang Chủ</a></li>
             <li><a href="#">Phim Lẻ</a></li>
+            <li><a href="#">Phim Bộ</a></li>
             <li><a href="#">Thể Loại</a></li>
             <li><a href="#">Quốc Gia</a></li>
             <li><a href="#">Năm</a></li>
-            <li>
-                <input type="search" class="search-bar" placeholder="Tìm kiếm phim..." />
-            </li>
-            <li>
-                <button class="theme-toggle">🌓</button>
-            </li>
         </ul>
     </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Tìm Kiếm Phim...">
+    </div>
+</header>
 
-    <!-- Slider Section -->
-    <div class="slider">
-        <div class="slide">
-            <img src="/api/placeholder/1200/400" alt="Featured Movie" />
-            <div class="slide-info">
-                <h2>Tên Phim</h2>
-                <span class="format">TV Series</span>
-                <span class="status">Đang chiếu</span>
+<!-- Slider -->
+<div class="slider">
+    <button class="left">&lt;</button>
+    <div>Image - Slide Show</div>
+    <button class="right">&gt;</button>
+</div>
+
+<!-- Content -->
+<div class="container">
+    <div class="movie-section">
+        <h2>
+            Phim Lẻ Mới Cập Nhật
+            <a href="#" style="color: #ff9806;">Xem Thêm</a>
+        </h2>
+        <div class="movie-list">
+            <div class="movie-card">
+                <img src="URL_HINH_ANH" alt="Tên Phim">
+                <p>Tên Phim</p>
+            </div>
+            <div class="movie-card">
+                <img src="URL_HINH_ANH" alt="Tên Phim">
+                <p>Tên Phim</p>
             </div>
         </div>
     </div>
 
-    <!-- Featured Movies -->
-    <section>
-        <h2>Phim Đề Cử</h2>
-        <div class="movie-grid">
-            <article class="movie-card">
-                <img src="/api/placeholder/200/300" alt="Movie" />
-                <span class="movie-format">TV</span>
-                <span class="movie-rating">8.5</span>
-                <span class="movie-status">Đang chiếu</span>
-            </article>
+    <div class="movie-section">
+        <h2>
+            Phim Bộ Mới Cập Nhật
+            <a href="#" style="color: #ff9806;">Xem Thêm</a>
+        </h2>
+        <div class="movie-list">
+            <div class="movie-card">
+                <img src="URL_HINH_ANH" alt="Tên Phim">
+                <p>Tên Phim</p>
+            </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- Latest Movies -->
-    <section>
-        <h2>Phim Lẻ Mới Cập Nhật</h2>
-        <div class="movie-grid">
-            <article class="movie-card">
-                <img src="/api/placeholder/200/300" alt="Movie" />
-                <span class="movie-format">Movie</span>
-                <span class="movie-rating">9.0</span>
-                <span class="movie-status">Hoàn thành</span>
-            </article>
-        </div>
-    </section>
+<!-- Footer -->
+<footer>
+    <img src="URL_LOGO" alt="Logo">
+    <p>Copyright © 2024 [Tên Website]. Mọi quyền được bảo lưu.<br>
+    Mọi bộ phim trên website đều được sưu tầm từ nhiều nguồn khác nhau.</p>
+</footer>
 
-    <!-- Latest Series -->
-    <section>
-        <h2>Phim Bộ Mới Cập Nhật</h2>
-        <div class="movie-grid">
-            <article class="movie-card">
-                <img src="/api/placeholder/200/300" alt="Movie" />
-                <span class="movie-format">TV</span>
-                <span class="movie-rating">7.8</span>
-                <span class="movie-status">Đang chiếu</span>
-            </article>
-        </div>
-    </section>
-
-    <!-- Aside -->
-    <aside>
-        <h2>Phim Phổ Biến</h2>
-        <div class="movie-grid">
-            <article class="movie-card">
-                <img src="/api/placeholder/200/300" alt="Movie" />
-                <span class="movie-format">Special</span>
-                <span class="movie-rating">8.9</span>
-                <span class="movie-status">Hoàn thành</span>
-            </article>
-        </div>
-    </aside>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="logo">
-            <img src="/api/placeholder/200/60" alt="Logo" />
-        </div>
-        <p>Copyright © 2024 Movie Blog. Mọi quyền được bảo lưu</p>
-        <p>Movie Blog - Mọi bộ phim trên website đều được sưu tầm ở nhiều nguồn khác nhau.</p>
-    </footer>
 </body>
 </html>
