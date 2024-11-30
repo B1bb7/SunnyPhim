@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phim Online</title>
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    header .menu a:hover {
+      text-decoration: underline;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+    .slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .slider .progress-bar {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 90%;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    footer {
+      text-align: center;
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="https://example.com/logo.png" alt="Logo" height="40">
+    </div>
+    <div class="menu">
+      <a href="#">Phim Lẻ</a>
+      <a href="#">Phim Bộ</a>
+      <a href="#">Thể Loại</a>
+      <a href="#">Quốc Gia</a>
+      <a href="#">Năm Phát Hành</a>
+      <input type="text" placeholder="Tìm kiếm..." />
+    </div>
+  </header>
+
+  <!-- Slider -->
+  <div class="slider">
+    <img src="https://via.placeholder.com/1920x300" alt="Slide 1">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    // Slider autoplay
+    let sliderIndex = 0;
+    const slides = [
+      "https://via.placeholder.com/1920x300?text=Slide+1",
+      "https://via.placeholder.com/1920x300?text=Slide+2",
+      "https://via.placeholder.com/1920x300?text=Slide+3"
+    ];
+
+    const slider = document.querySelector(".slider img");
+    const progressBar = document.querySelector(".progress-bar");
+
+    function changeSlide() {
+      sliderIndex = (sliderIndex + 1) % slides.length;
+      slider.src = slides[sliderIndex];
+    }
+
+    setInterval(changeSlide, 5000); // Change slide every 5 seconds
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo">
+      <img src="https://example.com/logo.png" alt="Logo" height="40">
+    </div>
+    <p>
+      Copyright © 2024 Phim Online. Mọi quyền được bảo lưu.  
+      Các bộ phim đều được sưu tầm từ nhiều nguồn khác nhau.
+    </p>
+  </footer>
+</body>
+</html>
