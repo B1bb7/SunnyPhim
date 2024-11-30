@@ -3,90 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Phim</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <title>Tên Website Phim</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #1d1b26;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        header img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .search-bar {
+            margin-left: auto;
+        }
+        .search-bar input {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #1d1b26;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .movie-section {
+            margin-bottom: 30px;
+        }
+        .movie-section h2 {
+            margin-bottom: 10px;
+        }
+        .movie-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .movie-card {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .movie-card img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+        .movie-card h3 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="http://2.bp.blogspot.com/-ViJEs7ojhX8/XtmiGLc22kI/AAAAAAAADdM/KRppovodVeI0hR8IoVhiZ1a3WfzYHvyXgCK4BGAYYCw/s228-rw/macinasai.png" alt="Logo Website">
-        </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="#">Phim Lẻ</a></li>
-                <li><a href="#">Phim Bộ</a></li>
-                <li><a href="#">Thể Loại</a></li>
-                <li><a href="#">Quốc Gia</a></li>
-                <li><a href="#">Năm Phát Hành</a></li>
-                <li>
-                    <input type="text" placeholder="Tìm kiếm..." class="search-bar">
-                </li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Slider -->
-    <section class="slider">
-        <div class="slides">
-            <div class="slide active">
-                <img src="URL_IMAGE_PHIM_1" alt="Phim Hot 1">
-                <div class="info">
-                    <h3>Tên Phim 1</h3>
-                    <p>Định Dạng: TV | Trạng Thái: Đang Chiếu</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="URL_IMAGE_PHIM_2" alt="Phim Hot 2">
-                <div class="info">
-                    <h3>Tên Phim 2</h3>
-                    <p>Định Dạng: Rạp | Trạng Thái: Hoàn Thành</p>
-                </div>
-            </div>
-            <!-- Thêm nhiều slide hơn -->
-        </div>
-        <div class="controls">
-            <button class="prev">&lt;</button>
-            <button class="next">&gt;</button>
-            <button class="play-pause">Play</button>
-        </div>
-        <div class="progress-bar"></div>
-    </section>
+<header>
+    <img src="http://2.bp.blogspot.com/-ViJEs7ojhX8/XtmiGLc22kI/AAAAAAAADdM/KRppovodVeI0hR8IoVhiZ1a3WfzYHvyXgCK4BGAYYCw/s228-rw/macinasai.png" alt="Logo Website">
+    <nav>
+        <ul>
+            <li><a href="#">Phim Lẻ</a></li>
+            <li><a href="#">Phim Bộ</a></li>
+            <li><a href="#">Thể Loại</a></li>
+            <li><a href="#">Quốc Gia</a></li>
+            <li><a href="#">Năm Phát Hành</a></li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm phim...">
+    </div>
+</header>
 
-    <!-- Body -->
-    <main>
-        <section class="post-body">
-            <h2>Phim Lẻ Mới Cập Nhật</h2>
-            <div class="movies-grid">
-                <!-- Card Phim -->
-                <div class="movie-card">
-                    <img src="URL_IMAGE_PHIM" alt="Tên Phim">
-                    <div class="info">
-                        <h4>Tên Phim</h4>
-                        <p>Định Dạng: TV | Trạng Thái: Đang Chiếu</p>
-                    </div>
-                </div>
-                <!-- Thêm các card khác -->
+<div class="container">
+    <!-- Phim Lẻ -->
+    <div class="movie-section">
+        <h2>Phim Lẻ Mới Cập Nhật</h2>
+        <div class="movie-list">
+            <!-- Card Phim -->
+            <div class="movie-card">
+                <img src="URL_HINH_ANH_PHIM" alt="Tên Phim">
+                <h3>Tên Phim 1</h3>
             </div>
-        </section>
-        <section class="post-body">
-            <h2>Phim Bộ Mới Cập Nhật</h2>
-            <div class="movies-grid">
-                <!-- Tương tự như trên -->
+            <div class="movie-card">
+                <img src="URL_HINH_ANH_PHIM" alt="Tên Phim">
+                <h3>Tên Phim 2</h3>
             </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
-            <img src="http://2.bp.blogspot.com/-ViJEs7ojhX8/XtmiGLc22kI/AAAAAAAADdM/KRppovodVeI0hR8IoVhiZ1a3WfzYHvyXgCK4BGAYYCw/s228-rw/macinasai.png" alt="Logo Website">
         </div>
-        <p>
-            Copyright © 2024 <span id="website-name">Tên Website</span>. Mọi quyền được bảo lưu.<br>
-            <span id="website-name">Tên Website</span>: Mọi bộ phim trên website đều được sưu tầm từ nhiều nguồn khác nhau.
-        </p>
-    </footer>
+    </div>
+
+    <!-- Phim Bộ -->
+    <div class="movie-section">
+        <h2>Phim Bộ Mới Cập Nhật</h2>
+        <div class="movie-list">
+            <div class="movie-card">
+                <img src="URL_HINH_ANH_PHIM" alt="Tên Phim">
+                <h3>Tên Phim Bộ 1</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <img src="http://2.bp.blogspot.com/-ViJEs7ojhX8/XtmiGLc22kI/AAAAAAAADdM/KRppovodVeI0hR8IoVhiZ1a3WfzYHvyXgCK4BGAYYCw/s228-rw/macinasai.png" alt="Logo Website">
+    <p>Copyright © 2024 [Tên Website]. Mọi quyền được bảo lưu. [Tên Website] Mọi bộ phim trên website đều được sưu tầm từ nhiều nguồn khác nhau.</p>
+</footer>
+
 </body>
 </html>
